@@ -30,7 +30,7 @@ public class PlayCamera : MonoBehaviour
         _webCamTexture = new WebCamTexture(webCamDevices[0].name, 1024, 768, 30);
         _webCamTexture.Play();
         rawImage.texture = _webCamTexture;
-        
+
         StartCoroutine(Illation(AfterTreatment));
     }
 
@@ -56,7 +56,7 @@ public class PlayCamera : MonoBehaviour
                 new Vector3(
                     yoloResult.Rect.X * (1024f / 640f) *
                     (wireframeCarrier.GetComponent<RectTransform>().rect.width / 1024f),
-                    yoloResult.Rect.Y * (768f / 640f) *
+                    wireframeCarrier.GetComponent<RectTransform>().rect.height - yoloResult.Rect.Y * (768f / 640f) *
                     (wireframeCarrier.GetComponent<RectTransform>().rect.height /
                      768f)
                 );
