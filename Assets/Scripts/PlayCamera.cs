@@ -40,6 +40,7 @@ public class PlayCamera : MonoBehaviour
 
         foreach (var yoloResult in yoloResults)
         {
+            Debug.Log(yoloResult.Rect.Y);
             var label = yoloResult.Label;
             var instantiate = Instantiate(wireframe, wireframeCarrier);
             instantiate.GetComponentsInChildren<Text>()[0].text = label.ToString();
